@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'routes/pages.dart';
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -9,7 +11,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Scaffold(),
+      initialRoute: Pages.INITIAL,
+      routes: Pages.routes,
     );
   }
 }

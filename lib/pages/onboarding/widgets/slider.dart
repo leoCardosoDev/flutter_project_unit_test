@@ -12,6 +12,7 @@ class OnboardingSlide extends StatelessWidget {
         Provider.of<OnboardingController>(context, listen: false);
     return Expanded(
       child: PageView(
+        controller: controller.pageController,
         children: List.generate(controller.items.length, (index) {
           final OnboardingItem item = controller.items[index];
           return Container(

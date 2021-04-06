@@ -1,8 +1,13 @@
-import 'package:flutter/foundation.dart' show ChangeNotifier;
+import 'package:flutter/widgets.dart';
 
 import '../../data/models/onboardingitem.dart';
 
 class OnboardingController extends ChangeNotifier {
+  double _currentPage = 0;
+  double get currentPage => _currentPage;
+
+  final PageController pageController = PageController();
+
   final List<OnboardingItem> items = [
     OnboardingItem(
       image: "assets/svg/pages/onboarding/slider_1.svg",
@@ -23,4 +28,18 @@ class OnboardingController extends ChangeNotifier {
           "Donec a ex laoreet augue consectetur dignissim mauris, sollicitudin et ligula eu.",
     ),
   ];
+
+  void afterFirstLayout() {
+    pageController.addListener(() {
+      final double page = pageController.page;
+      _currentPage = page;
+      notifyListeners();
+    });
+  }
+
+  @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
+  }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_projeto_cero/controllers/onboarding/onboarding_controller.dart';
+import 'package:flutter_projeto_cero/utils/theme_version_fonts.dart';
 import 'package:provider/provider.dart';
 
 import '../../../utils/theme_version_colors.dart';
@@ -21,7 +22,12 @@ class OnboardingControls extends StatelessWidget {
             return CupertinoButton(
               onPressed: () {},
               color: ThemeVersionColor.primaryColor,
-              child: Text(isEndPage ? "Get Started" : "Next"),
+              child: Text(
+                isEndPage ? "Get Started" : "Next",
+                style: ThemeVersionFonts.normal.copyWith(
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
             );
           }),
         ],

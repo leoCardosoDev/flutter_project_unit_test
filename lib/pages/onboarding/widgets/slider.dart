@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../utils/utils.dart';
 import '../../../data/models/onboardingitem.dart';
 import '../../../controllers/onboarding/onboarding_controller.dart';
 
@@ -23,15 +24,13 @@ class OnboardingSlide extends StatelessWidget {
                 Text(
                   item.title,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  ),
+                  style: ThemeVersionFonts.title,
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 15),
                 Text(
                   item.description,
                   textAlign: TextAlign.center,
+                  style: ThemeVersionFonts.normal,
                 ),
                 SizedBox(height: 20),
               ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'utils/theme_version_fonts.dart';
 import 'routes/pages.dart';
 
 class MyApp extends StatelessWidget {
@@ -11,6 +12,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        textTheme: ThemeVersionFonts.textTheme,
       ),
       initialRoute: Pages.INITIAL,
       routes: Pages.routes,

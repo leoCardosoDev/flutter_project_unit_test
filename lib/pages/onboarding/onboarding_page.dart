@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../controllers/onboarding/onboarding_controller.dart';
-import 'widgets/buttons_controls_widget.dart';
+import 'widgets/widgets.dart';
 
 class OnboardingPage extends StatelessWidget {
   @override
@@ -16,9 +16,7 @@ class OnboardingPage extends StatelessWidget {
             width: double.infinity,
             child: Column(
               children: [
-                Expanded(
-                  child: Container(),
-                ),
+                OnboardingSlide(),
                 OnboardingControls(),
               ],
             ),
